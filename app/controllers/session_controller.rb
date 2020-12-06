@@ -1,4 +1,5 @@
-class SessionControler < ApplicationControler
+class SessionController < ApplicationController
+
     def create
         @user = User.find_by(email: session_params[:email])
         if @user && @user.authenticate(sesion_params[:password])
@@ -14,6 +15,7 @@ class SessionControler < ApplicationControler
             render json: {logged_in: true, user: current_user}
         else
             render json: {logged_in: false, message: 'no such user'}
+        end
     end
 
     def destroy
