@@ -81,6 +81,7 @@ GEM
     crass (1.0.6)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.6)
     erubi (1.10.0)
     ffi (1.13.1)
     globalid (0.4.2)
@@ -227,6 +228,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   cloudinary
+  dotenv
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
