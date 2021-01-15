@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-    has_many :profilephotos, dependent: :destroy
+    has_one :profilephotos, dependent: :destroy
+    has_many :business
     has_secure_password
 
     validates :username, presence: true
