@@ -10,16 +10,17 @@ class BusinessesController < ApplicationController
         if business
             render json: business
         else
-            render json: {status 201, errors: "this business doesn't exist"}
+            render json: {status: 500, errors: "this business doesn't exist"}
         end
     end 
 
     def create 
-        business = Business.new(business_params)
-        if business.save
-            render json: business
+        @business = Business.new(business_params)
+        if @business.save
+            render json: @business
         else
-            render json: {status:201, erros:}
+            render json: {status:500, erros: @business.errors.full_messages}
+        end
     end
 
     def update 

@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :profilephotos
   resources :categories, only: [:create, :show, :index]
   resources :businesses, only: [:create, :index, :show, :update]
+  resources :neighborhoods, only: [:create, :index, :show]
 end
