@@ -8,6 +8,7 @@ class ProfilephotosController < ApplicationController
 
     def create
         photo = Cloudinary::Uploader.upload(params[:image])
+        render json: photo
         profilephoto = Profilephoto.create({image: photo, user_id: profilephoto_params[:user_id]})
         if profilephoto.save 
             render json: {profilephoto: profilephoto}

@@ -1,7 +1,7 @@
 class NeighborhoodsController < ApplicationController
     def index 
         neighborhoods = Neighborhood.all
-        render json: neighborhodds
+        render json: neighborhoods
     end
 
     def show 
